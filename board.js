@@ -25,19 +25,6 @@ class Board {
 			row >= 0 && row < this.boardSize && col >= 0 && col < this.boardSize
 		);
 	}
-
-	hasKnight(row, col) {
-		if (this.isValidPosition(row, col)) {
-			return this.board[row][col] === this.knightSymbol;
-		}
-		return false;
-	}
-
-	placeKnight(row, col) {
-		if (this.isValidPosition(row, col) && !this.hasKnight(row, col)) {
-			this.board[row][col] = this.knightSymbol;
-		}
-	}
 }
 
 module.exports = Board;

@@ -17,6 +17,7 @@ function knightMoves(start, end) {
 	let targetReached = false;
 	let shortestPath = [];
 
+	console.log(`Finding path for ${start} to ${end}`);
 	// Input validation
 	if (
 		!board.isValidPosition(start[0], start[1]) ||
@@ -25,9 +26,10 @@ function knightMoves(start, end) {
 		console.log("Error, invalid coordinate used");
 		return;
 	}
+
 	const rootNode = new Node(start[0], start[1]);
 	const queue = [rootNode];
-	visited.add(rootNode.row + "-" + rootNode.col); // Initialize visited with the starting position
+	visited.add(rootNode.row + "-" + rootNode.col); // Initialise visited with the starting position
 
 	while (queue.length > 0) {
 		const currentNode = queue.shift();
@@ -74,4 +76,9 @@ function knightMoves(start, end) {
 	}
 }
 
+//Testing
 knightMoves([3, 3], [4, 3]);
+knightMoves([0, 0], [7, 6]);
+knightMoves([3, 3], [7, 6]);
+knightMoves([0, 0], [7, 7]);
+knightMoves([-1, 0], [50, 7]);
